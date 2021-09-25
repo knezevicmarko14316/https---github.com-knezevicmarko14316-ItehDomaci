@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mobilni telefoni</title>
+        <link rel="stylesheet" href="styl.css">
+        <link href="https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    </head>
+
+
+    <style>
+
+        ul { padding: 0 }
+        
+        
+        
+        a { color: #d13400; text-decoration: none; display: block;  }
+        
+        
+        
+        /* === SPRITES === */
+        
+        .menu-mobile {
+          float: left;
+          margin: 0 12px 0 12px;
+          display: block;
+          background-image: url('http://www.alwaystwisted.com/playground/img/sprites.png');
+          background-repeat: no-repeat;
+          width: 36px;
+          height: 36px;
+          margin-top: 2px;
+        }
+        
+        .menu-button { background-position: -32px -292px; }
+        
+        /*li:hover i {
+          background-position-x: -32px;
+        }*/
+        li:hover {
+          background: rgba(0, 0, 0, 0.15);
+        }
+        li:hover a {
+          text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+        }
+        
+        @media screen and (min-width: 48em) { 
+          #menu-button { visibility: hidden }
+        }
+        
+        
+        
+        
+        
+        
+        [role="navigation"] { 
+          background: #5C5C5C;
+          font-family: sans-serif;
+          font-weight: 700;
+        }
+        
+        [role="navigation"] ul {
+          margin: 0;
+          padding: 0;
+         
+        }
+        
+        [role="navigation"] li {
+          color: #6d6d6d;
+          padding-left: 24px;
+          position: relative;
+          display: block;
+        
+        }
+        
+        @media screen and (min-width: 48em) { 
+          [role="navigation"] li { border-left: none }
+        }
+        
+        
+        
+        [role="navigation"] a {
+          position: relative;
+          display: block;
+          line-height: 48px;
+          font-size: 20px;
+          text-decoration: none;
+          color: #FFF;
+        }
+        
+        [role="navigation"], [role="main"] { width: 100% }
+        
+        .js #wrapper {
+          display: -webkit-box;
+          display:    -moz-box;
+          display:         box;
+          -webkit-box-orient: horizontal;
+             -moz-box-orient: horizontal;
+            -ms-box-orient: horizontal;
+              box-orient: horizontal;
+        }
+        
+        
+        [role="main"], [role="banner"] {
+          -webkit-box-shadow: -3px 0px 4px 0.5 1px 2px rgba(0, 0, 0, 0.1);
+             -moz-box-shadow: -3px 0px 4px 0.5 1px 2px rgba(0, 0, 0, 0.1);
+                box-shadow: -3px 0px 4px 0.5 1px 2px rgba(0, 0, 0, 0.1);
+        
+        }
+        
+        .js [role="navigation"] {
+          margin-left: -100%;
+          -webkit-box-ordinal-group: 1;
+             -moz-box-ordinal-group: 1;
+              -ms-box-ordinal-group: 1;
+                  box-ordinal-group: 1;
+          -webkit-transition: all 0.1s ease-in-out;
+             -moz-transition: all 0.1 S ease-in-out;
+              -ms-transition: all 0.1s ease-in-out;
+                 -o-transition: all 0.1s ease-in-out;
+                    transition: all 0.1s ease-in-out;
+        }
+        
+        [role="banner"] {
+          width: 100%;
+        }
+        .js [role="banner"] {
+          margin-left: 0;
+          -webkit-box-ordinal-group: 2;
+             -moz-box-ordinal-group: 2;
+                -ms-box-ordinal-group: 2;
+                box-ordinal-group: 2;
+        }
+        .js [role="main"] { 
+          margin-left: -100%;
+          margin-top: 50px;
+          -webkit-box-ordinal-group: 3;
+             -moz-box-ordinal-group: 3;
+              -ms-box-ordinal-group: 3;
+                  box-ordinal-group: 3;
+          padding: 1.5%;
+        }
+        
+        .active-nav [role="navigation"] { background: #5C5C5C; margin-left: 0; width: 80%; }
+        
+        .active-nav #clear-btn {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 800px;
+          width: 20%;
+          background: transparent;
+          z-index: 4;
+        }
+        
+        
+        @media all and (min-width: 768px) {
+            
+        
+          .js [role="navigation"] {
+            background: #5C5C5C;
+            width: 30%;
+            margin-left: 0;
+            -webkit-box-ordinal-group: 2;
+               -moz-box-ordinal-group: 2;
+                  -ms-box-ordinal-group: 2;
+                      box-ordinal-group: 2;
+          }
+        
+          .js [role="main"], .js [role="banner"] {
+            width: 70%;
+          }
+          
+        
+          .active-nav #clear-btn { display: none }
+        
+        }
+        
+        @media all and (min-width: 800px) { 
+        .js #wrapper {
+            -webkit-box-orient: vertical;
+               -moz-box-orient: vertical;
+                  -ms-box-orient: vertical;
+                      box-orient: vertical;
+        }
+          .js [role="navigation"] {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+          }
+          
+          [role="navigation"] li{
+            display: inline-block;
+            padding: 0 12px;
+            border: none;
+            border-right: 1px solid #333;
+          }
+        
+        }
+        
+            </style>
+
+    <body style="background-color: beige;">
+        <nav role="navigation">
+            <ul>
+              <li><a href="admin.html">Pocetna</a></li>
+              <li><a href="operacije/odajavi_se.php">Odjavi Se</a></li>
+            </ul>
+        </nav>
+     
+
+        <div class="forme"></div>
+       
+        <div id="form"class="add-new" style="padding-top:0px;">
+            <div id="forma" class="form" >
+              <form class="add-form" method="post" action="operacije/dodaj_telefon.php">
+                <input style="color:black;"type="text" name="model" placeholder="model"/>
+                <input style="color:black;"type="text" name="ram"placeholder="ram"/>
+                <input style="color:black;"type="text" name="procesor"placeholder="procesor"/>
+                <input style="color:black;"type="text" name="baterija"placeholder="baterija"/>
+                <input style="color:black;"type="text" name="kamera"placeholder="kamera"/>
+                <input style="color:black;"type="text" name="slika"placeholder="slika"/>
+                <input style="color:black;"type="text" name="cena"placeholder="cena"/>
+                <input style="color:black;"type="text" name="marka_id"placeholder="marka_id"/>
+                <button>Sacuvaj</button>
+              </form>
+            </div>
+          </div>
+          <aside>
+            <h2>Pretrazi po:</h2>
+            <input class="pretrazi" type="search" placeholder="pretrazi model...">
+                <section>
+                    <h3>Marke</h3>
+                    <hr>
+                        <ul class="marke">
+                           
+                        </ul>
+                </section>
+                
+        
+        </aside>
+      
+        <!-- main section to display products: -->
+
+        <main >
+            Dodajte Novi Telefon <button style="padding: 2px 4px; border: none; color: white; border-radius: 5px; background-color: blue;" id='add' type='button' class='btn btn-primary' style='margin-left:15px;'>Dodaj</button>
+            <div class='telefoni'></div>  
+            
+            </div>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="admin.html">Pocetna</a></li>
+                    <li><a href="operacije/odajavi_se.php">Odjavi se</a></li>
+                </ul>
+            </nav>
+           
+        </footer>
+     
+    </body>
+</html>
+<script>
+$(document).ready(function(){
+    document.getElementById("forma").style.display = "none";
+    $.ajax({
+       url:'operacije/vrati_marke.php',
+       type:'POST',
+       success:function(marke){
+           if(!marke.error){
+               $('.marke').html(marke);
+           }
+       }
+
+   });  
+   $.ajax({
+       url:'operacije/vrati_telefone.php',
+       type:'POST',
+       success:function(telefoni){
+           if(!telefoni.error){
+               $('.telefoni').html(telefoni);
+           }
+       }
+
+   });  
+   // //kada neko ukuca nesto u seaech
+   $('.pretrazi').keyup(function(){
+
+       var search=$('.pretrazi').val();
+       console.log(search);
+       $.ajax({
+           url:'operacije/pretrazi_telefone.php',
+           //prosledjujemo preko kljuca search atribut search
+           data:{search:search},
+           type:'POST',
+           success:function(telefoni){
+               //ako nema greske onda u result ubacimo data koji je vracen
+               if(!telefoni.error){
+                   $('.telefoni').html(telefoni);
+                   if(telefoni==""){
+                     $.ajax({
+                     url:'operacije/vrati_telefone.php',
+                     type:'POST',
+                     success:function(telefoni){
+                     if(!telefoni.error){
+                     $('.telefoni').html(telefoni);
+                    }
+                   }
+                   });  
+                   }
+               }
+               }  
+       });
+   });
+   $(".marke").on('click', ".marka" , function(){
+    let id=this.id;
+    console.log(id);
+     $.ajax({
+       url:'operacije/vrati_telefone_marka.php',
+       type:'POST',
+       data:{id:id},
+       success:function(telefoni){
+           if(!telefoni.error){
+               $('.telefoni').html(telefoni);
+           }
+       }
+
+   });
+  });
+  $(".telefoni").on('click','.izmeni', function(){
+            let id=this.id;
+                $.ajax({
+                    url:'operacije/vrati_telefon.php',
+                    type:'POST',
+                    data:{id:id},
+                    success:function(telefon){
+                    if(!telefon.error){
+                        console.log('vratio');
+                        $('.forme').html(telefon);
+                    }
+                }
+                });
+            });
+            $(".telefoni").on('click','.obrisi', function(){
+            let id=this.id;
+                $.ajax({
+                    url:'operacije/obrisi_telefon.php',
+                    type:'POST',
+                    data:{id:id},
+                    success:function(){
+                        location.reload();
+                }
+                });
+            });
+            $("#add").on('click', function(){
+            document.getElementById("forma").style.display = "block";
+            document.getElementById("add").style.display = "none";
+            });
+});
+
+
+
+
+
+</script>

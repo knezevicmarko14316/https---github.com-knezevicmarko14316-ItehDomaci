@@ -1,0 +1,144 @@
+html{
+    background: #f7f7f7f7;
+}
+
+body{
+    background: white;
+    max-width: 1000px;
+    margin:0  auto;
+    color: rgb(40, 49, 68);
+    font-family: 'Pragati Narrow', sans-serif;
+}
+
+header , footer{
+    background: #333a40;
+    color: white;
+}
+
+
+#navbar ul{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;   
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+a:hover{
+    color: rgb(51, 142, 216);
+}
+
+#navbar ul li {
+    float:left;
+    list-style: none;
+    padding:5px;
+   
+}
+#navbar ul li a{
+padding:20px;
+  display:block;
+   
+}
+
+h1, nav{
+    display: inline-block;
+  padding:15px;
+}
+
+main{
+    width: 680px;
+    display: inline-block;
+    padding: 10px;
+}
+
+aside{
+    width: 270px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    
+}
+
+ ul{
+   list-style: none;
+
+}
+
+
+.product{
+    border: 1px solid gray ;
+    width: 200px;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+}
+
+img{
+    max-width: 100%;
+}
+
+.botton{
+    padding: 10px;
+    display:inline-block;
+}
+
+.botton:last-of-type{
+    background-color: rgb(51, 142, 216);
+    color:black;
+}
+
+.botton:last-of-type:hover{
+   color:white;  
+}
+
+p:first-of-type{
+    color:rgb(211, 69, 69);
+}
+
+p{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+.menu{
+    display: none;
+    background-color: #333a40;
+    padding:10px;
+    position: absolute;
+    z-index: 1;
+    min-width: 80px;
+    text-align: center;
+}
+.drop:hover .menu{
+ display: block;   
+}
+#menud{
+    display: none;
+    background-color: #333a40;
+    padding:30px;
+    position: absolute;
+    z-index: 2;
+    min-width: 30px;
+    text-align: center;
+    left:120px;
+    top:160px;
+}
+.dropp:hover #menud{
+    display: block;   
+   }
+
+   .dropp:hover  {
+      background-color: rgb(233, 236, 241);
+     
+   }
+
+footer ul li {
+  float:left;
+  padding:20px;
+}

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Mobilni telefoni</title>
+        <link rel="stylesheet" href="styl.css">
+        <link href="https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    </head>
+
+    <style>
+
+ul { padding: 0 }
+
+
+
+a { color: #d13400; text-decoration: none; display: block;  }
+
+
+
+/* === SPRITES === */
+
+.menu-mobile {
+  float: left;
+  margin: 0 12px 0 12px;
+  display: block;
+  background-image: url('http://www.alwaystwisted.com/playground/img/sprites.png');
+  background-repeat: no-repeat;
+  width: 36px;
+  height: 36px;
+  margin-top: 2px;
+}
+
+.menu-button { background-position: -32px -292px; }
+
+/*li:hover i {
+  background-position-x: -32px;
+}*/
+li:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+li:hover a {
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (min-width: 48em) { 
+  #menu-button { visibility: hidden }
+}
+
+
+
+
+
+
+[role="navigation"] { 
+  background: #5C5C5C;
+  font-family: sans-serif;
+  font-weight: 700;
+}
+
+[role="navigation"] ul {
+  margin: 0;
+  padding: 0;
+ 
+}
+
+[role="navigation"] li {
+  color: #6d6d6d;
+  padding-left: 24px;
+  position: relative;
+  display: block;
+
+}
+
+@media screen and (min-width: 48em) { 
+  [role="navigation"] li { border-left: none }
+}
+
+
+
+[role="navigation"] a {
+  position: relative;
+  display: block;
+  line-height: 48px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #FFF;
+}
+
+[role="navigation"], [role="main"] { width: 100% }
+
+.js #wrapper {
+  display: -webkit-box;
+  display:    -moz-box;
+  display:         box;
+  -webkit-box-orient: horizontal;
+     -moz-box-orient: horizontal;
+    -ms-box-orient: horizontal;
+      box-orient: horizontal;
+}
+
+
+[role="main"], [role="banner"] {
+  -webkit-box-shadow: -3px 0px 4px 0.5 1px 2px rgba(0, 0, 0, 0.1);
+     -moz-box-shadow: -3px 0px 4px 0.5 1px 2px rgba(0, 0, 0, 0.1);
+        box-shadow: -3px 0px 4px 0.5 1px 2px rgba(0, 0, 0, 0.1);
+
+}
+
+.js [role="navigation"] {
+  margin-left: -100%;
+  -webkit-box-ordinal-group: 1;
+     -moz-box-ordinal-group: 1;
+      -ms-box-ordinal-group: 1;
+    	  box-ordinal-group: 1;
+  -webkit-transition: all 0.1s ease-in-out;
+     -moz-transition: all 0.1 S ease-in-out;
+      -ms-transition: all 0.1s ease-in-out;
+  	   -o-transition: all 0.1s ease-in-out;
+  		  transition: all 0.1s ease-in-out;
+}
+
+[role="banner"] {
+  width: 100%;
+}
+.js [role="banner"] {
+  margin-left: 0;
+  -webkit-box-ordinal-group: 2;
+     -moz-box-ordinal-group: 2;
+    	-ms-box-ordinal-group: 2;
+        box-ordinal-group: 2;
+}
+.js [role="main"] { 
+  margin-left: -100%;
+  margin-top: 50px;
+  -webkit-box-ordinal-group: 3;
+     -moz-box-ordinal-group: 3;
+      -ms-box-ordinal-group: 3;
+          box-ordinal-group: 3;
+  padding: 1.5%;
+}
+
+.active-nav [role="navigation"] { background: #5C5C5C; margin-left: 0; width: 80%; }
+
+.active-nav #clear-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 800px;
+  width: 20%;
+  background: transparent;
+  z-index: 4;
+}
+
+
+@media all and (min-width: 768px) {
+    
+
+  .js [role="navigation"] {
+    background: #5C5C5C;
+    width: 30%;
+    margin-left: 0;
+    -webkit-box-ordinal-group: 2;
+       -moz-box-ordinal-group: 2;
+    	  -ms-box-ordinal-group: 2;
+    		  box-ordinal-group: 2;
+  }
+
+  .js [role="main"], .js [role="banner"] {
+    width: 70%;
+  }
+  
+
+  .active-nav #clear-btn { display: none }
+
+}
+
+@media all and (min-width: 800px) { 
+.js #wrapper {
+    -webkit-box-orient: vertical;
+       -moz-box-orient: vertical;
+    	  -ms-box-orient: vertical;
+    		  box-orient: vertical;
+}
+  .js [role="navigation"] {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+  
+  [role="navigation"] li{
+    display: inline-block;
+    padding: 0 12px;
+    border: none;
+    border-right: 1px solid #333;
+  }
+
+}
+
+body {
+  background: url("http://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max");
+}
+
+    </style>
+
+    <body style="background-color: beige;">
+        <nav role="navigation">
+            <ul>
+              <li><a href="index.html">Pocetna</a></li>
+              <li><a href="korpa.php"><i style="font-size: 20px; color: white;" class="fa fa-shopping-cart"></i></a></li>
+              <li><a href="prijavi_se.html">Uloguj Se</a></li>
+            </ul>
+        </nav>
+     
+        <aside>
+            <h2>Pretrazi po:</h2>
+            <input class="pretrazi" type="search" placeholder="pretrazi model...">
+                <section>
+                    <h3>Marke</h3>
+                    <hr>
+                        <ul class="marke">
+                           
+                        </ul>
+                </section>
+                
+        
+        </aside>
+
+       
+      
+        <!-- main section to display products: -->
+
+        <main >
+            <div class='telefoni' style="background-color: beige;"></div>  
+            </div>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Pocetna</a></li>
+                    <li><a href="korpa.php">Korpa</a></li>
+                    <li><a href="prijavi_se.html">Uloguj se</a></li>
+                </ul>
+            </nav>
+           
+        </footer>
+     
+    </body>
+</html>
+<script>
+$(document).ready(function(){
+    $.ajax({
+       url:'operacije/vrati_marke.php',
+       type:'POST',
+       success:function(marke){
+           if(!marke.error){
+               $('.marke').html(marke);
+           }
+       }
+
+   });  
+   $.ajax({
+       url:'operacije/vrati_telefone.php',
+       type:'POST',
+       success:function(telefoni){
+           if(!telefoni.error){
+               $('.telefoni').html(telefoni);
+           }
+       }
+
+   });  
+   $(".telefoni").on('click','.dodajUKorpu', function(){
+   let id=this.id;
+    console.log(id);
+       $.ajax({
+           url:'operacije/dodaj_u_korpu.php',
+           type:'POST',
+           data:{id:id}
+       });
+   }); 
+   // //kada neko ukuca nesto u search
+   $('.pretrazi').keyup(function(){
+
+       var search=$('.pretrazi').val();
+       console.log(search);
+       $.ajax({
+           url:'operacije/pretrazi_telefone.php',
+           data:{search:search},
+           type:'POST',
+           success:function(telefoni){
+               if(!telefoni.error){
+                   $('.telefoni').html(telefoni);
+                   if(telefoni==""){
+                     $.ajax({
+                     url:'operacije/vrati_telefone.php',
+                     type:'POST',
+                     success:function(telefoni){
+                     if(!telefoni.error){
+                     $('.telefoni').html(telefoni);
+                    }
+                   }
+                   });  
+                   }
+               }
+               }  
+       });
+   });
+   $(".marke").on('click', ".marka" , function(){
+    let id=this.id;
+    console.log(id);
+     $.ajax({
+       url:'operacije/vrati_telefone_marka.php',
+       type:'POST',
+       data:{id:id},
+       success:function(telefoni){
+           if(!telefoni.error){
+               $('.telefoni').html(telefoni);
+           }
+       }
+
+   });
+  });
+});
+
+
+
+
+
+</script>
